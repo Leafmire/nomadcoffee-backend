@@ -21,18 +21,28 @@
   "dependencies": {
     "@graphql-tools/load-files": "^6.5.3",
     "@graphql-tools/merge": "^8.2.6",
-    "@graphql-tools/schema": "^8.3.5",
+    "@graphql-tools/schema": "^8.3.6",
     "@prisma/client": "^3.11.1",
-    "apollo-server": "^3.6.6",
+    "apollo-server": "^3.6.7",
+    "apollo-server-core": "^3.6.7",
+    "apollo-server-express": "^3.6.7",
+    "aws-sdk": "^2.1106.0",
     "bcrypt": "^5.0.1",
     "dotenv": "^16.0.0",
-    "graphql": "^16.3.0"
+    "graphql": "^16.3.0",
+    "graphql-subscriptions": "^2.0.0",
+    "graphql-upload": "^13.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.10.0",
+    "npm-check-updates": "^12.5.7",
+    "subscriptions-transport-ws": "^0.9.19"
   },
   "devDependencies": {
     "@babel/core": "^7.17.8",
     "@babel/node": "^7.16.8",
     "@babel/preset-env": "^7.16.11",
     "nodemon": "^2.0.15",
+    "prettier-plugin-prisma": "^3.11.0",
     "prisma": "^3.11.1"
   }
 }
