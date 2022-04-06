@@ -2,6 +2,34 @@ import client from "../client";
 
 export default {
   User: {
+    followings: ({id}, {lastId}) =>
+      client.user.findMany({
+        where: {
+          followers: {
+            some: {
+              id,
+            },
+          },
+        },
+        take: 5,
+        skip: lastId ? 1 : 0,
+        ...(lastId && {cursor: {id: lastId}})
+      }),
+
+    followers: ({id}, {lastId}) =>
+      client.user.findMany({
+        where: {
+          following: {
+            some: {
+              id,
+            },
+          },
+        },
+        take: 5,
+        skip: lastId ? 1 : 0,
+        ...(lastId && {cursor: {id: lastId}})
+      }),
+
     // 자신을 팔로우 중인 인원을 리턴
     totalFollowing: ({ id }) =>
       client.user.count({
@@ -48,5 +76,6 @@ export default {
       });
       return Boolean(exists);
     },
+    coffeeShops: ({id}) => client.user.findUnique({where: {id}}).coffeeshops()
   },
 };
