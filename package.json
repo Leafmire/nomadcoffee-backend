@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "dev": "nodemon --exec babel-node  server",
+    "dev": "nodemon --exec babel-node src/server",
     "migrate": "npx prisma migrate dev",
     "studio": "npx prisma studio"
   },
@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/Leafmire/nomadcoffee-backend#readme",
   "dependencies": {
+    "@babel/cli": "^7.17.6",
     "@graphql-tools/load-files": "^6.5.3",
     "@graphql-tools/merge": "^8.2.6",
     "@graphql-tools/schema": "^8.3.6",
@@ -40,6 +41,7 @@
   "devDependencies": {
     "@babel/core": "^7.17.8",
     "@babel/node": "^7.16.8",
+    "@babel/plugin-transform-runtime": "^7.17.0",
     "@babel/preset-env": "^7.16.11",
     "nodemon": "^2.0.15",
     "prettier-plugin-prisma": "^3.11.0",
