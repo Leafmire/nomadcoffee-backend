@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "nodemon --exec babel-node src/server",
     "migrate": "npx prisma migrate dev",
-    "studio": "npx prisma studio"
+    "studio": "npx prisma studio",
+    "build": "babel src --out-dir build",
+    "start": "node build/server"
   },
   "repository": {
     "type": "git",
