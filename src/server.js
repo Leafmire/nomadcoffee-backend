@@ -10,6 +10,7 @@ import { createServer } from "http";
 import { execute, subscribe } from "graphql";
 import { SubscriptionServer } from "subscriptions-transport-ws";
 import { makeExecutableSchema } from "@graphql-tools/schema";
+import { ApolloServerPluginLandingPageGraphQLPlayground } from "apollo-server-core";
 
 const PORT = process.env.PORT;
 const schema = makeExecutableSchema({ typeDefs, resolvers });
@@ -20,8 +21,6 @@ async function startServer() {
 
   const server = new ApolloServer({
     schema,
-    playground: true,
-    introspection: true,
     context: async (ctx) => {
       if (ctx.req) {
         return {
@@ -46,6 +45,7 @@ async function startServer() {
           };
         },
       },
+      ApolloServerPluginLandingPageGraphQLPlayground(),
     ],
   });
   await server.start();
